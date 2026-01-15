@@ -53,7 +53,7 @@ export default function App() {
 
 
     try {
-      const res = await fetch("http://traxion-backend-api.onrender.com/api/chat", {
+      const res = await fetch("https://traxion-backend-api.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
