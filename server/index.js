@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Inicializar Gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 // EL CEREBRO
 // Definir la personalidad y reglas de negocio para la rúbrica.
