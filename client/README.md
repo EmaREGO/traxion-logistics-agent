@@ -1,16 +1,82 @@
-# React + Vite
+# Traxión-Logistics-Agent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema inteligente de logística para planeación de rutas operativas, con integración de IA generativa y dashboard interactivo.
 
-Currently, two official plugins are available:
+## Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interfaz web moderna con React y TailwindCSS.
+- Formularios dinámicos para registrar rutas: origen, destino, tipo de unidad, peso, capacidad y prioridad.
+- Generación de planes de ruta optimizados usando Google Generative AI (Gemini).
+- Cálculo de resumen del viaje: distancia, tiempo estimado, paradas requeridas, combustible y costo aproximado.
+- Línea de tiempo interactiva para los pasos de la ruta.
+- Descarga de información generada en PDF.
+- Dashboard con análisis y recomendaciones de la IA.
 
-## React Compiler
+## Tecnologías usadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Frontend: React, TailwindCSS, Radix UI, React Router
+- Backend: Node.js, Express, CORS, dotenv
+- IA: Google Generative AI (Gemini 2.5 Flash)
+- Utilidades: jsPDF para exportar PDF
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Clona el repositorio:**
+
+```
+git clone https://github.com/ElEmmaENP/traxion-logistics-agent.git
+cd traxion-logistics-agent
+```
+
+**Instala dependencias en backend:**
+
+```
+cd server
+npm install
+```
+
+**Instala dependencias en frontend:**
+
+```
+cd ../client
+npm install
+```
+
+**Crea un archivo .env en el backend con tu API key de Gemini:**
+
+```
+GEMINI_API_KEY=tu_api_key_aqui
+PORT=3001
+```
+
+## Uso
+
+**Levanta el backend:**
+
+```
+cd server
+npm start
+```
+
+**Levanta el frontend:**
+
+```
+cd client
+npm start
+```
+
+- Abre el navegador en http://localhost:3000
+- Ingresa los datos de la ruta y haz clic en “Generar Plan con IA”.
+- Visualiza resumen del viaje, línea de tiempo y recomendaciones.
+- Descarga el plan en PDF con el botón “Descargar PDF”.
+
+## Estructura del proyecto
+```
+traxion-logistics-agent/
+├─ client/           # Frontend React
+├─ server/           # Backend Express
+│  ├─ index.js       # Servidor principal
+│  └─ .env           # Variables de entorno
+├─ lib/utils.js      # Funciones de utilidad (PDF, etc)
+└─ README.md
+```

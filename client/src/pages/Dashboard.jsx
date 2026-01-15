@@ -35,6 +35,7 @@ export default function App() {
   const [analysis, setAnalysis] = useState(null)
 
   const handleChange = (name, value) => {
+    if (value == null)return;
     setForm({ ...form, [name]: value })
   }
 
@@ -123,7 +124,7 @@ export default function App() {
             <div>
               <Label>Tipo de unidad</Label>
               <Select
-                value={form.unidad}
+                value={form.unidad || ""}
                 onValueChange={(v) =>
                   handleChange("unidad", v)
                 }
@@ -172,7 +173,7 @@ export default function App() {
             <div>
               <Label>Prioridad</Label>
               <Select
-                value={form.prioridad}
+                value={form.prioridad || ""}
                 onValueChange={(v) =>
                   handleChange("prioridad", v)
                 }
